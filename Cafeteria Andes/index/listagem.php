@@ -2,7 +2,11 @@
 <?php
 //consulta
 $produtos = "SELECT produtoID, nomeproduto, tempoentrega, precounitario,imagempequena ";
-$produtos .= " FROM produtos";
+$produtos .= " FROM produtos ";
+if (isset($_GET['produto'])) {
+    $nomeproduto = $_GET['produto'];
+    $produtos .= " WHERE nomeproduto LIKE '%{$nomeproduto}%'";
+}
 $resultado = mysqli_query($conecta, $produtos);
 
 if (!$resultado) {
@@ -20,6 +24,7 @@ if (!$resultado) {
     <!-- estilo -->
     <link href="_css/estilo.css" rel="stylesheet">
     <link href="_css/produtos.css" rel="stylesheet">
+    <link href="_css/produto_pesquisa.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,6 +32,12 @@ if (!$resultado) {
     <?php include_once("../_incluir/funcoes.php"); ?>
 
     <main>
+        <div id="janela_pesquisa">
+            <form action="listagem.php" method="get">
+                <input type="text" name="produto" placeholder="Nome do Produto">
+                <input type="image" name="pesquisa" src="../_assets/botao_search.png">
+            </form>
+        </div>
         <div id="listagem_produtos">
 
             <?php
