@@ -1,4 +1,4 @@
-<?php require_once("../conexao/conexao.php"); ?>
+<?php require_once("conexao/conexao.php"); ?>
 <?php
 //testar parâmetr
 if (isset($_GET['codigo'])) {
@@ -40,8 +40,8 @@ $imagemgrande = $dados_detahes['imagemgrande'];
 </head>
 
 <body>
-    <?php include_once("../_incluir/topo.php"); ?>
-    <?php include_once("../_incluir/funcoes.php"); ?>
+    <?php include_once("_incluir/topo.php"); ?>
+    <?php include_once("_incluir/funcoes.php"); ?>
 
     <main>
         <div id="detalhe_produto">
@@ -60,7 +60,7 @@ $imagemgrande = $dados_detahes['imagemgrande'];
         </div>
     </main>
 
-    <?php include_once("../_incluir/rodape.php"); ?>
+    <?php include_once("_incluir/rodape.php"); ?>
 </body>
 
 </html>

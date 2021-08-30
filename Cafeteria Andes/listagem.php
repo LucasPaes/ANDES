@@ -1,4 +1,4 @@
-<?php require_once("../conexao/conexao.php"); ?>
+<?php require_once("conexao/conexao.php"); ?>
 <?php
 //consulta
 $produtos = "SELECT produtoID, nomeproduto, tempoentrega, precounitario,imagempequena ";
@@ -28,14 +28,14 @@ if (!$resultado) {
 </head>
 
 <body>
-    <?php include_once("../_incluir/topo.php"); ?>
-    <?php include_once("../_incluir/funcoes.php"); ?>
+    <?php include_once("_incluir/topo.php"); ?>
+    <?php include_once("_incluir/funcoes.php"); ?>
 
     <main>
         <div id="janela_pesquisa">
             <form action="listagem.php" method="get">
                 <input type="text" name="produto" placeholder="Nome do Produto">
-                <input type="image" name="pesquisa" src="../_assets/botao_search.png">
+                <input type="image" name="pesquisa" src="_assets/botao_search.png">
             </form>
         </div>
         <div id="listagem_produtos">
@@ -61,7 +61,7 @@ if (!$resultado) {
         </div>
     </main>
 
-    <?php include_once("../_incluir/rodape.php"); ?>
+    <?php include_once("_incluir/rodape.php"); ?>
 </body>
 
 </html>
